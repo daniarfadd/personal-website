@@ -32,6 +32,11 @@
   .about .prompt {
     width: 40%;
     font-size: 30px;
+    
+  }
+
+  .prompt {
+    margin-top: 10px;
   }
   .prompt svg {
     font-size: 60px;
@@ -61,7 +66,7 @@
     font-size: 20px;
   }
   
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1260px) {
     .about h2 {
       font-size: 40px;
     }
@@ -83,3 +88,25 @@
       font-size: 30px;
     }
   }
+
+
+  /* @media only screen and (max-width: 1260px) {
+  
+  
+    .about .prompt {
+      margin-top: 10px;
+      font-size: 25px;
+      width: 80%;
+    }
+  
+    .skills {
+      text-align: center;
+    }
+    .list {
+      padding: 0;
+    }
+  
+    .skills h2 {
+      font-size: 30px;
+    }
+  } */
