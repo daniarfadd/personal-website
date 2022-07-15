@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
@@ -17,6 +18,9 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-vertical-timeline-component": "^3.5.2",
+    "swiper": "^8.3.0",
+    "typed.js": "^2.0.12",
+    "vanta": "^0.5.22",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -1,0 +1,38 @@
+.email-container{
+    background: rgba(192, 179, 179, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(192, 179, 179, 0.07);
+    padding: 30px 60px;
+}
+
+.email-container > h1 {
+    text-align: center;
+   
+    
+}
+
+.form--email{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    width: 500px;
+    margin: auto;
+    /* background-color: red; */
+}
+
+.form--email label {
+    display: flex;
+    margin: 10px 0px;
+}
+
+.input--form {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin: 10px 0px;
+}
