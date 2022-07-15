@@ -10,18 +10,12 @@
 
 .email-container > h1 {
     text-align: center;
-   
-    
 }
 
 .form--email{
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     width: 500px;
     margin: auto;
-    /* background-color: red; */
+
 }
 
 .form--email label {

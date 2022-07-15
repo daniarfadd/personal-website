@@ -5,6 +5,16 @@
     color: #3e497a;
   }
 
+/* className="px-4 py-3 mb-5 leading-normal text-center text-blue-700 bg-blue-100 rounded" */
+
+.alert{
+  padding: 4px 3px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: blue;
+}
+
+
   form {
     background: linear-gradient(180deg, rgba(240,240,240,1) 46%, rgba(62,6,95,1) 81%);
     padding: 35px 0px;
@@ -26,7 +36,7 @@ form > button {
 }
 
 form > button:hover {
-  background-color: #A084CF; /* Green */
+  background-color: #A084CF; 
   color: white;
 }
 

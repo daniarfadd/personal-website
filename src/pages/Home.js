@@ -5,11 +5,56 @@ import "../styles/Home.css"
 import Spline from "@splinetool/react-spline";
 import { Link } from '@mui/material';
 import Typed from 'typed.js';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Email from '../components/Email';
 
 
+import emailjs from '@emailjs/browser';
+
+
+
 function Home() {
+
+  // state for email
+  const [values, setValues] = useState({
+    fullName: '',
+    email: '',
+    message: ''
+  })
+
+  const [status, setStatus] = useState('')
+
+  function submitHandler (e) {
+    e.preventDefault()
+    emailjs.send('service_rc9y1hq', 'template_yjj9ivv', values, 'KiFTo5oJSaMYxpdM-')
+    .then(response => {
+      console.log('SUCCESS!', response);
+      setValues({
+        fullName: '',
+        email: '',
+        message: ''
+      });
+      setStatus('SUCCESS');
+    }, error => {
+      console.log('FAILED...', error);
+    });
+  }
+
+  useEffect(() => {
+    if(status === 'SUCCESS') {
+      setTimeout(() => {
+        setStatus('');
+      }, 3000);
+    }
+  }, [status]);
+
+
+  function changeHandler(e){
+    setValues(prevValues => ({
+      ...prevValues,
+      [e.target.name]: e.target.value
+    }))
+  }
 
   const el = useRef(null);
   // Create reference to store the Typed instance itself
@@ -68,13 +113,20 @@ function Home() {
             </li>
           </ol>
         </div>
-        
-        <form>
-          <Email />
+        {status && renderAlert()}
+        <form onSubmit={submitHandler}>
+          <Email handleChange={changeHandler} name={values.fullName} email={values.email} message={values.message}/>
           <button type='submit'>Send</button>
         </form>
       </div>
     );
   }
   
+  const renderAlert = () => (
+    <div className="alert">
+      <p>your message submitted successfully</p>
+    </div>
+  )
+
+
   export default Home;
