@@ -102,19 +102,25 @@ function Home() {
             <li className="item">
               <h2> Front-End</h2>
               <span>
-                ReactJS, Angular, Redux, HTML, CSS, React Native, Flutter, NPM,
-                Ionic, BootStrap, MaterialUI, Yarn, TailwindCSS, StyledComponents
+                ReactJS, Redux, HTML, CSS, NPM, MaterialUI, Yarn, TailwindCSS, SASS
               </span>
             </li>
          
             <li className="item">
+              <h2>Programming Languages</h2>
+              <span>JavaScript, Kotlin, Python, PHP</span>
+            </li>
+
+            <li className="item">
               <h2>Languages</h2>
-              <span>JavaScript, Java, Python, C#, C, C++, TypeScript, Go</span>
+              <span>Bahasa, English</span>
             </li>
           </ol>
         </div>
-        {status && renderAlert()}
+        
+      
         <form onSubmit={submitHandler}>
+          {status && renderAlert()}
           <Email handleChange={changeHandler} name={values.fullName} email={values.email} message={values.message}/>
           <button type='submit'>Send</button>
         </form>
@@ -124,7 +130,7 @@ function Home() {
   
   const renderAlert = () => (
     <div className="alert">
-      <p>your message submitted successfully</p>
+      <p>Thank You, Your Message Submitted Successfully !</p>
     </div>
   )
 

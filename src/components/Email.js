@@ -4,7 +4,7 @@ import "../styles/Email.css"
 function Email(props) {
   return (
     <div className='email-container'>
-      <h1>Contact Me !!!</h1>
+      <h1>Leave me a message</h1>
       <div className='form--email'>
        
         <label>Name</label>
