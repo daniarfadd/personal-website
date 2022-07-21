@@ -4,6 +4,7 @@ import data from "../data"
 import "../styles/ProjectDetail.css"
 import { GitHub } from '@mui/icons-material';
 import { Link } from '@mui/material';
+import LinkIcon from '@mui/icons-material/Link';
 
 
 
@@ -13,8 +14,12 @@ function ProjectDetail() {
   return (
     <div className='project'>
       <h1>{project.name}</h1>
-      <img src={project.img} alt="my project"/>
-      <Link href={project.link}> <GitHub /> </Link>
+      <img src={project.img} alt="my project" />
+      <div className='project--link'>
+        <Link href={project.link}><GitHub /></Link>
+        {project.demo && <Link href={project.demo}> <LinkIcon /> </Link>}
+      </div>
+
     </div>
   )
 }
