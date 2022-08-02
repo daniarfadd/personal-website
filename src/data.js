@@ -2,6 +2,8 @@ import linkBio from "./assets/link-bio.png"
 import selfCard from "./assets/self-card-profile.jpeg"
 import travelJournal from "./assets/travel-journal.jpeg"
 import note from "./assets/notes-app.png"
+import weather from "./assets/weather-app.png"
+import quiz from "./assets/quiz-app.png"
 
 export default [
     {
@@ -23,9 +25,21 @@ export default [
         demo: ""
     },    
     {
-        name: "Note Aplication",
+        name: "Note Application",
         img: note,
         link : "https://github.com/daniarfadd/react-note-app",
         demo: "https://daffa-note-app.netlify.app"
     },    
+    {
+        name: "Quiz Application",
+        img: quiz,
+        link : "https://github.com/daniarfadd/quiz-application",
+        demo: "https://trivia-quizzes.netlify.app"
+    },  
+    {
+        name: "Weather Application",
+        img: weather,
+        link : "https://github.com/daniarfadd/my-weather-app",
+        demo: "https://trivia-quizzes.netlify.app"
+    },  
 ]
