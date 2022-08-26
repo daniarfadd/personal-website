@@ -40,6 +40,6 @@ export default [
         name: "Weather Application",
         img: weather,
         link : "https://github.com/daniarfadd/my-weather-app",
-        demo: "https://trivia-quizzes.netlify.app"
+        demo: "https://daffa-weather-app.netlify.app"
     },  
 ]
