@@ -18,6 +18,8 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-vertical-timeline-component": "^3.5.2",
+    "sweetalert2": "^11.4.29",
+    "sweetalert2-react-content": "^5.0.3",
     "swiper": "^8.3.0",
     "typed.js": "^2.0.12",
     "vanta": "^0.5.22",

@@ -15,6 +15,7 @@ function Email(props) {
          placeholder="John Doe" 
          value={props.name}
          onChange={props.handleChange}
+         required
          />
        
         <label >Email</label>
@@ -25,6 +26,7 @@ function Email(props) {
         placeholder="youremail@example.com"
         value={props.email}
         onChange={props.handleChange}
+        required
         />
        
         <label>Message</label>
@@ -33,6 +35,7 @@ function Email(props) {
         name="message"
         value={props.message}
         onChange={props.handleChange}
+        required
         />
       </div>
     </div>

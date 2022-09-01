@@ -7,10 +7,15 @@ import Typed from 'typed.js';
 import { useRef, useEffect, useState } from 'react';
 import Email from '../components/Email';
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 import { lazy, Suspense } from 'react'
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
+
+  // sweetalert
+  const MySwal = withReactContent(Swal)
 
 function Home() {
 
@@ -24,26 +29,32 @@ function Home() {
   const [status, setStatus] = useState('')
 
   function submitHandler(e) {
+ 
     e.preventDefault()
     emailjs.send('service_rc9y1hq', 'template_yjj9ivv', values, 'KiFTo5oJSaMYxpdM-')
-      .then(response => {
-        console.log('SUCCESS!', response);
-        setValues({
-          fullName: '',
-          email: '',
-          message: ''
-        });
-        setStatus('SUCCESS');
-      }, error => {
-        console.log('FAILED...', error);
+    .then(response => {
+      console.log('SUCCESS!', response);
+      setValues({
+        fullName: '',
+        email: '',
+        message: ''
       });
+      setStatus('SUCCESS');
+      Swal.fire(
+        'Thank You, Your Message Submitted Successfully!',
+        'I appreciate it a lot 🥰',
+        'success'
+      )
+    }, error => {
+      console.log('FAILED...', error);
+    });
   }
 
   useEffect(() => {
     if (status === 'SUCCESS') {
       setTimeout(() => {
         setStatus('');
-      }, 3000);
+      }, 1000);
     }
   }, [status]);
 
@@ -118,14 +129,14 @@ function Home() {
 
           <li className="item">
             <h2>Languages</h2>
-            <span>Bahasa, English</span>
+            <span>Bahasa Indonesia, English</span>
           </li>
         </ol>
       </div>
 
 
       <form onSubmit={submitHandler}>
-        {status && renderAlert()}
+        {/* {status && renderAlert()} */}
         <Email handleChange={changeHandler} name={values.fullName} email={values.email} message={values.message} />
         <button type='submit'>Send</button>
       </form>
@@ -133,11 +144,16 @@ function Home() {
   );
 }
 
-const renderAlert = () => (
-  <div className="alert">
-    <p>Thank You, Your Message Submitted Successfully !</p>
-  </div>
-)
+// const renderAlert = () => (
+//   <div className="alert">
+//     <p>Thank You, Your Message Submitted Successfully !</p>
+//   </div>
+//   Swal.fire(
+//     'Thank You, Your Message Submitted Successfully!',
+//     'I appreciate it a lot 🥰',
+//     'success'
+//   )
+// )
 
 
 export default Home;
