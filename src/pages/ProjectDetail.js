@@ -17,7 +17,7 @@ function ProjectDetail() {
       <img src={project.img} alt="my project" />
       <div className='project--link'>
         <Link href={project.link}><GitHub /></Link>
-        {project.demo && <Link href={project.demo}> <LinkIcon /> </Link>}
+        {project.demo && <Link href={project.demo} target="_blank"> <LinkIcon /> </Link>}
       </div>
 
     </div>

@@ -8,14 +8,11 @@ import { useRef, useEffect, useState } from 'react';
 import Email from '../components/Email';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+
 
 import { lazy, Suspense } from 'react'
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
-
-  // sweetalert
-  const MySwal = withReactContent(Swal)
 
 function Home() {
 
@@ -105,7 +102,7 @@ function Home() {
       <div className="about">
         <h2> Hello, My Name is <span className='daffa' ref={el}></span></h2>
         <div className="prompt">
-          <p>A software developer with a passion for learning and creating.</p>
+          <p>A junior software developer with a passion to always learning.</p>
           <Link href='https://www.linkedin.com/in/daniarfad/'><LinkedInIcon /></Link>
           <Link href='mailto:moch.daniarfa@gmail.com'><EmailIcon /></Link>
           <Link href="https://github.com/daniarfadd"><GitHubIcon /></Link>
@@ -144,16 +141,6 @@ function Home() {
   );
 }
 
-// const renderAlert = () => (
-//   <div className="alert">
-//     <p>Thank You, Your Message Submitted Successfully !</p>
-//   </div>
-//   Swal.fire(
-//     'Thank You, Your Message Submitted Successfully!',
-//     'I appreciate it a lot 🥰',
-//     'success'
-//   )
-// )
 
 
 export default Home;

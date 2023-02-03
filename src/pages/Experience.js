@@ -57,7 +57,7 @@ function Experience() {
                 icon={<WorkIcon />}
                 >
                     <h3>Internship</h3>
-                    <p>Software Engineering Intern in ICUBE by SIRCLO </p>
+                    <p>Software Engineering Intern at ICUBE by SIRCLO </p>
                 </VerticalTimelineElement>
 
 
