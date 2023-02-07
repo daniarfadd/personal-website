@@ -6,6 +6,7 @@ import Experience from './pages/Experience'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ProjectDetail from './pages/ProjectDetail';
+import Prayer from './components/Prayer';
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path='/projects' element={<Projects />} />
           <Route path='/projects/:id' element={<ProjectDetail />} />
           <Route path='/experience' element={<Experience />} />
+          <Route path='/prayer' element={<Prayer />} />
         </Routes>
         <Footer />
       </Router>
