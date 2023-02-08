@@ -9,9 +9,10 @@ function Prayer() {
   const [longitude, setLongitude] = useState("")
 
   function success(position) {
-    // baseURL = `http://api.aladhan.com/v1/calendar?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&method=2`
+    baseURL = `http://api.aladhan.com/v1/calendar?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&method=2`
     setLatitude(position.coords.latitude)
     setLongitude(position.coords.longitude)
+    // baseURL = `http://api.aladhan.com/v1/calendar?latitude=${latitude}&longitude=${longitude}&method=2`
   }
   function error() {
     alert("Position not can't be access")
@@ -27,9 +28,11 @@ function Prayer() {
   userLocation();
 
   useEffect(() => {
-    baseURL = `http://api.aladhan.com/v1/calendar?latitude=${latitude}&longitude=${longitude}&method=2`
     axios.get(baseURL).then(response => {
-      setPrayerTime(response.data)
+      let date = new Date()
+      let todayDate = date.getDate()
+      // take today gate and subtract by 1, because the first date start from array index 0
+      setPrayerTime(response.data.data[todayDate-1])
     })
   }, [baseURL])
   console.log(prayerTime)
