@@ -1,18 +1,22 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-let baseURL = "http://api.aladhan.com/v1/calendar?latitude=51.508515&longitude=-0.1254872&method=2&month=4&year=2017"
 
 function Prayer() {
-  const [prayerTime, setPrayerTime] = useState()
+  
+  const [prayerTime, setPrayerTime] = useState([])
   const [latitude, setLatitude] = useState("")
   const [longitude, setLongitude] = useState("")
 
+  // const baseURL = "http://api.aladhan.com/v1/calendar?latitude=51.508515&longitude=-0.1254872&method=2&month=4&year=2017"
+
+  const baseURL = `http://api.aladhan.com/v1/calendar?latitude=${latitude}&longitude=${longitude}&method=2`
+
   function success(position) {
-    baseURL = `http://api.aladhan.com/v1/calendar?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&method=2`
+    
     setLatitude(position.coords.latitude)
     setLongitude(position.coords.longitude)
-    // baseURL = `http://api.aladhan.com/v1/calendar?latitude=${latitude}&longitude=${longitude}&method=2`
+    
   }
   function error() {
     alert("Position not can't be access")
@@ -35,11 +39,44 @@ function Prayer() {
       setPrayerTime(response.data.data[todayDate-1])
     })
   }, [baseURL])
-  console.log(prayerTime)
+  console.log(prayerTime.timings)
 
 
   return (
-    <div>Prayer</div>
+    <div>
+      <h1>Prayer</h1>
+
+    {
+      JSON.stringify(prayerTime.timings) !== undefined ? 
+      <table>
+        <tbody>
+          <tr>
+            <td>Fajr</td>
+            <td>{prayerTime.timings.Fajr}</td>
+          </tr>
+          <tr>
+            <td>Dhuhr</td>
+            <td>{prayerTime.timings.Dhuhr}</td>
+          </tr>
+          <tr>
+            <td>Asr</td>
+            <td>{prayerTime.timings.Asr}</td>
+          </tr>
+          <tr>
+            <td>Maghrib</td>
+            <td>{prayerTime.timings.Maghrib}</td>
+          </tr>
+          <tr>
+            <td>Isha</td>
+            <td>{prayerTime.timings.Isha}</td>
+          </tr>
+
+        </tbody>
+      </table>
+      : 
+      <h1>Loading</h1>
+    }
+    </div>
   )
 }
 
